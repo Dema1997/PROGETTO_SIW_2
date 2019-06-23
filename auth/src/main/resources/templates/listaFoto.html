@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<body>
+	<div>
+	
+<h4>Dettagli Album</h4>
+<div>
+		Nome: <span th:text= "${album.nome}">    paolo    </span>
+		</div>
+		
+		<div>
+		Descrizione: <span th:text= "${album.descrizione}">   merialdo   </span>
+		</div>
+		
+		<h2>Aggiungi foto</h2>
+		<form th:action="@{'/' + ${album.id} + '/confermaFoto' }" method="POST" th:object="${foto1}">
+	
+		<table>
+			<tr>
+				<td>Nome:</td>
+				<td>  <input type="text" th:field="*{nome}"/>  </td>
+				
+			</tr>
+		
+			<tr>
+				<td>
+					<button type="submit">AGGIUNGI FOTO</button>
+				</td>
+			</tr>
+			
+		</table>
+		
+	</form>
+	
+
+<h1>FOTO:</h1>
+		
+		<ul>
+			<li th:each="f : ${foto}"> 
+				<a
+				
+				th:text="${f.nome}"> paolo </a>
+				
+			</li>
+		</ul>
+		
+	</div>
+	
+	
+</body>
+</html>

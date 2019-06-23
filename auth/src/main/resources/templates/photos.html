@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<body>
+	<div>
+	
+		
+		
+	
+		<div>
+		Il tuo carrello: <span th:text= "${richiesta.id}">    paolo    </span>
+		</div>
+
+
+
+<h1>Clicca su una foto per aggiungerla al carrello</h1>
+
+<h1>FOTO:</h1>
+		
+		<ul>
+			<li th:each="f : ${foto}"> 
+		
+		
+		&nbsp
+				<a 
+				th:href="@{'/aggiornaCarrello/'+${richiesta.id} + '/' + ${f.nome} } "
+				th:text="${f.nome}"> paolo </a>
+				
+				
+			</li>
+			
+		</ul>
+		
+		
+		
+
+<h1>CARRELLO:</h1>
+		
+		<ul>
+			<li th:each="c : ${carrello}"   > 
+				<a
+				th:text="${c.nome}"> paolo </a>
+			</li>
+		</ul>
+		
+	</div>
+	
+	
+</body>
+</html>

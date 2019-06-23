@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<body>
+	<div>
+	
+
+		
+		<ul>
+			<li th:each="a : ${album}"> 
+				<a
+				th:href="@{'/a/' + ${a.id} }"
+				th:text="${a.nome}"> paolo </a>
+			</li>
+		</ul>
+		
+	</div>
+	
+	
+</body>
+</html>
